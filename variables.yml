@@ -9,5 +9,5 @@
   - name: task one var1
     shell: echo var1 >  one.txt
   - name: task two var2
-    shell: echo value of var2 is {{ var2 }} >> two.txt
+    shell: echo value of var2 is {{ var2 }} > two.txt
   
