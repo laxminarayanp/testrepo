@@ -1,0 +1,10 @@
+---
+- hosts: all
+  #become: yes
+  tasks:
+  - name: Creates a directory
+    file: path=/home/ansible/demodir state=directory mode=0755
+  - name: Creates a file
+    file: path=/home/ansible/demodir/dome.txt state=touch
+
+

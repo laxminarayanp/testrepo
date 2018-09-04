@@ -1,0 +1,13 @@
+---
+- hosts: ansiblenode1
+  become: yes
+  tasks:
+  - name: Creates play1user 
+    user: name=play1user shell=/bin/bash
+
+- hosts: ansiblenode2
+  become: yes
+  tasks:
+  - name: Creates play3user
+    user: name=play3user shell=/bin/bash
+
