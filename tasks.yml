@@ -1,0 +1,5 @@
+---
+- name: create a file
+  file: path=/home/ansible/task1.txt state=touch
+- name: create a user
+  user: name=taskuser state=present
