@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: no
+  tasks: 
+  - name: create files
+    file: path=/home/ansible/{{ item }}.txt state=touch
+    with_items:
+    - file1
+    - file2
+    - file3 

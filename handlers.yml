@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: no
+  tasks:
+  - name: copying apache file
+    copy: src=/home/ansible/apache2.conf dest=/etc/apache2/apache2.conf
+    notify: apache2
+  handlers:
+  - name: apache2
+    service: name=apache2 state=restarted
