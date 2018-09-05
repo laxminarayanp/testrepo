@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: no
+  tasks:
+  - name: to fail a task
+    shell: /bin/fail
+    ignore_errors: yes
+  - name: second task
+    file: path=/home/ansible/fail.txt state=touch

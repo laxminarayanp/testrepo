@@ -1,0 +1,9 @@
+---
+- name: install apache2
+  apt: name=apache2 state=present
+  when: ansible_os_family == "Debian"
+- name: copy config
+  copy: src=/home/ansible/apache2.conf dest=/etc/apache2/apache2.conf 
+  notify: apache2handler
+- name: copy index.html
+  template: src=index.html.j2 dest=/var/www/html/index.html

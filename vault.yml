@@ -1,0 +1,10 @@
+---
+- hosts: ansiblenode1
+  become: yes
+  gather_facts: no
+  vars_files:
+  - plain.yml
+  - secure.yml
+  tasks:
+  - name: task1
+    shell: echo "variable plain is {{ plain }} and secure is {{ secure }}" > /home/ansible/vault.txt
